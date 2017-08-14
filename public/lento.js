@@ -64,7 +64,7 @@ $(document).ready(function() {
                 $("title").html(result.name + " - " + title);
             },
             error: function(textStatus) {
-                if (textStatus = "abort") {
+                if ((textStatus = "abort")) {
                     name.text("Canceled");
                 }
                 else {
@@ -74,6 +74,7 @@ $(document).ready(function() {
                     }
                     else {
                         name.text("Error(1)");
+                        errorlimit = 0;
                     }
                 }
             }
@@ -113,6 +114,7 @@ $(document).ready(function() {
             }
             else {
                 name.text("Error(2)");
+                errorlimit = 0;
             }      
         },
         supplied:"oga",
