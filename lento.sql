@@ -5,3 +5,8 @@ CREATE TABLE IF NOT EXISTS `lento` (
   `image` varchar(128) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `lento` (`id`, `name`, `music`, `image`) VALUES
+(1,	'testname1',	'testmusic1',	'testimage1'),
+(2,	'testname2',	'testmusic2',	'testimage2');
+

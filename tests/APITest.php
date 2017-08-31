@@ -10,7 +10,7 @@ class APITest extends TestCase
     
     public function testMusicId()
     {
-        $testjson = ['id' => '1', 'name' => '[AIR] 鳥の詩', 'music' => 'http://music-void-fm.s-api.yunvm.com/air/air-1.ogg', 'image' => 'http://ww4.sinaimg.cn/large/a15b4afegw1fbkmh39pxij21jk0yqwkj.jpg'];
+        $testjson = ['id' => '1', 'name' => 'testname1', 'music' => 'testmusic1', 'image' => 'testimage1'];
         
         $response = $this->call('GET', '/api/music', $testjson);
         
@@ -27,9 +27,9 @@ class APITest extends TestCase
     
     public function testSearch()
     {
-        $testjson = [['id' => 1, 'name' => '[AIR] 鳥の詩', 'music' => 'http://music-void-fm.s-api.yunvm.com/air/air-1.ogg', 'image' => 'http://ww4.sinaimg.cn/large/a15b4afegw1fbkmh39pxij21jk0yqwkj.jpg']];
+        $testjson = [['id' => 2, 'name' => 'testname2', 'music' => 'testmusic2', 'image' => 'testimage2']];
         
-        $response = $this->call('GET', '/api/search', ['name' => 'AIR']);
+        $response = $this->call('GET', '/api/search', ['name' => 'testname2']);
         
         $this->assertEquals(json_encode($testjson), $response->content());
     }
